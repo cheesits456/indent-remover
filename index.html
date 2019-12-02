@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Indent Remover</title>
+	<script>
+		function convert() {
+			let output = document.getElementById("input").value.split("\n");
+			output.forEach((e, i) => output[i] = e.trim());
+			document.getElementById("output").value = output.join("\n");
+		}
+		function copy() {
+			document.getElementById("output").select();
+			document.execCommand("copy");
+		}
+	</script>
+</head>
+<body>
+	<div style="width: 50%; float: left">
+		<h1>Input</h1>
+		<textarea id="input" style="width: 98%" rows="20"></textarea>
+		<br><br>
+		<button onclick="convert()">Convert</button>
+	</div>
+	<div style="width: 50%; float: right">
+		<h1>Output</h1>
+		<textarea id="output" style="width: 98%" rows="20"></textarea>
+		<br><br>
+		<button onclick="copy()">Copy</button>
+	</div>
+</body>
+</html>

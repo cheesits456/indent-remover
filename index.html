@@ -1,31 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Indent Remover</title>
-	<script>
-		function convert() {
-			let output = document.getElementById("input").value.split("\n");
-			output.forEach((e, i) => output[i] = e.trim());
-			document.getElementById("output").value = output.join("\n");
-		}
-		function copy() {
-			document.getElementById("output").select();
-			document.execCommand("copy");
-		}
-	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/an-old-hope.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-dark.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="./js/script.js"></script>
 </head>
 <body>
-	<div style="width: 50%; float: left">
-		<h1>Input</h1>
-		<textarea id="input" style="width: 98%" rows="20"></textarea>
-		<br><br>
-		<button onclick="convert()">Convert</button>
-	</div>
-	<div style="width: 50%; float: right">
-		<h1>Output</h1>
-		<textarea id="output" style="width: 98%" rows="20"></textarea>
-		<br><br>
-		<button onclick="copy()">Copy</button>
+	<div class="container">
+		<br>
+		<div class="jumbotron">
+			<h1>Indent Remover</h1>
+			<p>A simple web application for removing indentation from the input text</p>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="container">
+					<h2 class="float-left">Input</h2>
+					<input type="button" class="btn btn-primary float-right" value="Convert" onclick="convert()">
+				</div>
+				<textarea id="input" rows="20" spellcheck="false"></textarea>
+			</div>
+			<div class="col-lg-6">
+				<div class="container">
+					<h2 class="float-left">Output</h2>
+					<input type="button" class="btn btn-primary float-right" id="copy" value="Copy" onclick="copy()">
+				</div>
+				<div id="output" class="hljs"></div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

@@ -1,0 +1,23 @@
+body {
+	font-family: sans-serif;
+}
+
+textarea {
+	resize: none;
+	border: none;
+}
+
+.hljs, textarea {
+	font-family: monospace;
+	font-size: 1rem;
+	white-space: pre;
+	width: 100%;
+	padding: 0.5rem;
+	border-radius: 1rem;
+	background-color: #23272A;
+	color: #c0c5ce;
+}
+
+.hljs {
+	overflow: auto;
+}
